@@ -38,7 +38,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <header className="absolute z-20 flex items-center justify-between w-full px-5 py-4 md:px-10">
+      <header className="z-20 flex items-center justify-between w-full px-5 py-4 bg-white shadow-2xl md:px-10">
         <div
           className={`z-30 w-full h-full absolute top-0 left-0 bg-black/50 transition-all ${
             open
@@ -47,7 +47,9 @@ const Navbar = () => {
           }`}
           onClick={() => setOpen(false)}
         ></div>
-        <div className="w-[300px] text-white font-medium">SHAPE UP</div>
+        <div className="w-[500px] text-black text-[1.5rem] font-bold">
+          SHAPE UP
+        </div>
         <nav className="items-center hidden lg:flex ">
           {navData.map((el, index) => (
             <Nav key={index} item={el} />
@@ -70,7 +72,6 @@ const Navbar = () => {
           <Sidebar data={navData} />
         </div>
       </header>
-      <Hero />
     </>
   );
 };

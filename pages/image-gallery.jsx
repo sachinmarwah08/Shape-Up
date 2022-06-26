@@ -1,5 +1,5 @@
-import { NextPage } from 'next';
-import Image from '../components/layouts/image-gallery/Image';
+import { NextPage } from "next";
+import Image from "../components/layouts/image-gallery/Image";
 import {
   collection,
   deleteDoc,
@@ -8,14 +8,16 @@ import {
   limit,
   orderBy,
   query,
-} from 'firebase/firestore';
-import { projectFirestore } from '../firebase/config';
+} from "firebase/firestore";
+import { projectFirestore } from "../firebase/config";
+import Navbar from "../components/navigation/Navbar";
 
 const ImageGallery = ({ imagesData }) => {
   console.log(imagesData);
   return (
     <>
-      <div className="bg-[#fffbeb]">
+      <Navbar />
+      <div className="h-screen pt-4 ">
         <Image imagesData={imagesData} />
       </div>
     </>
@@ -25,8 +27,8 @@ const ImageGallery = ({ imagesData }) => {
 export default ImageGallery;
 
 export async function getStaticProps(context) {
-  const imagesRef = collection(projectFirestore, 'images');
-  const q = await query(imagesRef, orderBy('timestamp', 'desc'), limit(8));
+  const imagesRef = collection(projectFirestore, "images");
+  const q = await query(imagesRef, orderBy("timestamp", "desc"), limit(8));
   const res = await getDocs(q);
   // const imagesRef = collection(projectFirestore, 'images');
   // const res = await getDocs(imagesRef);

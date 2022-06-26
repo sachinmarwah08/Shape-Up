@@ -6,12 +6,14 @@ import Trainer from "../components/layouts/trainer/Trainer";
 
 import Footer from "../components/footer/Footer";
 import Contact from "../components/layouts/Contact-Us/Contact";
+import Hero from "../components/layouts/Home/Hero";
 
 const Home: NextPage = () => {
   return (
     <>
       <div>
         <Navbar />
+        <Hero />
         <Healthy />
         <CoverImage />
         <Trainer />

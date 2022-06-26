@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Header from '../../Header';
-import Loader from '../../Loader';
-import Unsplash from '../../Unsplash';
-import axios from 'axios';
-import InfiniteScroll from 'react-infinite-scroll-component';
+import React, { useState, useEffect } from "react";
+import Header from "../../Header";
+import Loader from "../../Loader";
+import Unsplash from "../../Unsplash";
+import axios from "axios";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 const Image = ({ imagesData }) => {
   const [images, setImages] = useState(imagesData);
@@ -28,7 +28,7 @@ const Image = ({ imagesData }) => {
         hasMore={true}
         loader={<Loader />}
       > */}
-      <div className="w-[80%] mx-auto m-[4rem] grid gap-[1em] grid-cols-4 auto-rows-[300px]">
+      <div className="w-[80%] mx-auto h-screen grid gap-[1em] grid-cols-4 auto-rows-[300px]">
         {images.map((image) => (
           <Unsplash url={image.url} key={image.id} />
         ))}
