@@ -1,35 +1,34 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 //interface
-import { IHeaderNav } from "../../Interface/INav";
+import { IHeaderNav } from '../../Interface/INav';
 
 //utils
-import { routes } from "../../utils/routes";
-import Nav from "./Nav";
-import Sidebar from "./Sidebar";
-import Hero from "../layouts/Home/Hero";
+import { routes } from '../../utils/routes';
+import Nav from './Nav';
+import Sidebar from './Sidebar';
 
 const navData: IHeaderNav[] = [
   {
-    name: "Home",
+    name: 'Home',
     link: routes.home,
   },
   {
-    name: "Trainer",
+    name: 'Trainer',
     link: routes.home,
   },
   {
-    name: "Image Gallery",
+    name: 'Image Gallery',
     link: routes.imageGallery,
   },
   {
-    name: "Video Gallery",
+    name: 'Video Gallery',
     link: routes.home,
   },
   {
-    name: "Contact Us",
+    name: 'Contact Us',
     link: routes.contactUs,
   },
 ];
@@ -38,12 +37,12 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <header className="z-20 flex items-center justify-between w-full px-5 py-4 bg-white shadow-2xl md:px-10">
+      <header className="z-20 flex items-center justify-between w-full px-5 py-4 bg-white shadow-md md:px-10">
         <div
           className={`z-30 w-full h-full absolute top-0 left-0 bg-black/50 transition-all ${
             open
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
+              ? 'opacity-100 pointer-events-auto'
+              : 'opacity-0 pointer-events-none'
           }`}
           onClick={() => setOpen(false)}
         ></div>
@@ -65,8 +64,8 @@ const Navbar = () => {
         <div
           className={`bg-white text transition-all w-60 fixed top-0 h-screen z-40 ${
             open
-              ? "right-0 opacity-100 pointer-events-auto"
-              : "right-[-100%] opacity-0 pointer-events-none"
+              ? 'right-0 opacity-100 pointer-events-auto'
+              : 'right-[-100%] opacity-0 pointer-events-none'
           }`}
         >
           <Sidebar data={navData} />

@@ -1,13 +1,15 @@
-import React from "react";
+import React from 'react';
 
-const Unsplash = ({ url, key }) => {
+const Unsplash = ({ url, onDeleteIamge, id }) => {
   return (
     <div>
-      <img
-        className="object-cover w-full h-full shadow-2xl"
-        src={url}
-        key={key}
-      ></img>
+      <button
+        onClick={() => onDeleteIamge(id)}
+        // style={{ position: 'absolute', left: 0, top: 0 }}
+      >
+        delete
+      </button>
+      <img className="object-cover w-full h-full shadow-2xl" src={url}></img>
     </div>
   );
 };
