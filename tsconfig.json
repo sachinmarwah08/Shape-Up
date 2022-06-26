@@ -21,6 +21,6 @@
     "**/*.tsx",
     "components/layouts/image-gallery/Image.jsx",
     "components/Unsplash.jsx"
-  ],
+, "pages/image-gallery.jsx"  ],
   "exclude": ["node_modules"]
 }
